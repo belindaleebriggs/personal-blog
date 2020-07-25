@@ -1,0 +1,90 @@
+@import 'design-system.css';
+
+body {
+  margin: 40px;
+}
+
+/* Page Layout Styles */
+    .sidebar2 {
+        grid-area: sidebar2;
+    }
+
+    .content {
+        grid-area: content;
+        display: grid;
+        grid-template-areas:
+        "postMainImage"
+        "postBody";
+      }
+
+    .firstPostImage {
+      grid-area: postMainImage;
+      justify-self: center;
+      margin-top: 24px;
+    }
+
+    .header {
+        grid-area: header;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+
+    .wrapper {
+        background-color: #fff;
+        color: #444;
+    }
+
+  .wrapper {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-areas:
+     "header"
+     "content"
+     "sidebar2"
+     "footer"
+  }
+
+
+
+
+
+/* Mid to Large-sized screens */
+    @media only screen and (min-width: 800px)  {
+    .wrapper {
+      grid-gap: 20px;
+            grid-template-columns: 120px auto auto;
+            grid-template-areas:
+            "header  header  header"
+            "content content sidebar2"
+            "footer  footer  footer";
+            max-width: 1800px;
+        }
+    .content {
+      display: inline;
+    }
+
+     .firstPostImage {
+          float: left;
+          padding-right: 20px;
+        }
+    }
+
+.box {
+  background-color: var(--blue-grey-200);
+  color: var(--blue-grey-900);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 150%;
+}
+
+.header,
+.footer {
+  background-color: var(--blue-grey-050);
+}
+
+.sidebar2 {
+  background-color: var(--blue-grey-100);
+  color: var(--blue-grey-600);
+}
